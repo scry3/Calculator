@@ -1,0 +1,66 @@
+* {
+  font-family: "fraunces", serif;
+  font-size: large;
+  color: white;
+}
+body {
+  background-color: #224870;
+  margin: 0%;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /*esto representa el total del div*/
+}
+.calculadora {
+  display: grid; /*esto lo divide en una grilla(reja)*/
+  grid-template-columns: repeat(
+    4,
+    75px
+  ); /*y la grilla medira 4 columnas, cada una de 75px*/
+  grid-template-rows: 160px repeat(5, 75px); /*la altura de cada una sera de 160px, 5 filas, 75px cada una*/
+  background-color: #bf2424;
+  padding: 15px;
+  border-radius: 32px;
+  box-shadow: 15px 10px 0px 5px #00000033; /*(px toRight, px Down, blur, spread, color) */
+}
+button {
+  cursor: pointer;
+  margin: 5px;
+  padding: 0%;
+  border-radius: 32px;
+  border: none;
+  font-size: 1em;
+  background-color: #bf2424;
+  box-shadow: 5px 5px 10px -3px #00000040, -5px -5px 15px 3px #00ffc11f;
+}
+button:active {
+  background-color: #970e0e;
+}
+button:focus {
+  outline: none;
+}
+.col-2{
+  grid-column: span 2; /*para que ocupe 2 espacios de la grilla*/
+}
+.display {
+  display: flex;
+  flex-direction: column; /*para que este el resultado anterior y el actual, uno arriba del otro*/
+  align-items: flex-end; /*para que esten a la derecha del display*/
+  grid-column: 1/-1; /*esos son los parametros, va a ir de 1 a menos 1*/
+  padding: 16px;
+  margin: 10px 10px 20px 10px;
+  background-color: #363636;
+  border-radius: 32px;
+  text-align: right;
+  justify-content: space-between; /*pera que esten separados los valores*/
+  word-break: break-all; /*por si escrimos de más, que ocupe 2 lineas y no se pase de largo*/
+  box-shadow: 0px 0px 0px 10px #00000033;
+}
+#valor-actual{
+  font-size: 1.5em;
+}
+#valor-anterior{
+  font-size: 2em;
+}
